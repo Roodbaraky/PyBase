@@ -26,3 +26,7 @@ For Windows:
 - file sharing
 - screen sharing
 - audio calls
+
+## Contributor Statistics
+
+[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Roodbaraky)](https://github.com/Roodbaraky/PyBase)
