@@ -1,4 +1,5 @@
-- uses: Silleellie/pylint-github-action@v2
+- name: PyLint with dynamic badge
+  uses: Silleellie/pylint-github-action@v2
   with:
     
     # Path of the package(s) or python file(s) to lint, relative to the repository root. 
