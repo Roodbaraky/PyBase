@@ -30,16 +30,16 @@ export default function Home() {
   return (
     <main id='landing-page' className="flex min-h-screen flex-col items-center justify-center p-24 border border-pink">
       <section className="flex flex-col items-center justify-evenly  bg-base-100 w-5/6 h-screen rounded-xl">
-        <h1 className="my-20 ">Hello.</h1>
+        <h1 className=" ">Hello.</h1>
         <div className="flex gap-4">
 
 
 
           <button className="btn" onClick={() => (document.getElementById('signup') as HTMLDialogElement).showModal()}>Sign up</button>
           <dialog id="signup" className="modal">
-            <div className="modal-box">
-              <div className="modal-action size-full">
-                <form method="dialog" className="flex justify-between size-full">
+            <div className="modal-box py-0 m-0">
+              <div className="modal-action size-full py-0">
+                <form method="dialog" className="flex justify-between size-full py-0">
                   <h3 className="font-bold text-lg">Hello!</h3>
                   <button className="btn self-end">[x]</button>
 
@@ -60,7 +60,7 @@ export default function Home() {
 
           <button className="btn" onClick={() => (document.getElementById('login') as HTMLDialogElement).showModal()}>Log in</button>
           <dialog id="login" className="modal">
-            <div className="modal-box">
+            <div className="modal-box py-0">
               <div className="modal-action size-full">
                 <form method="dialog" className="flex justify-between size-full">
                   <h3 className="font-bold text-lg">Hello!</h3>
