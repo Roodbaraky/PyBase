@@ -27,6 +27,8 @@ For Windows:
 - screen sharing
 - audio calls
 
-## Contributor Statistics
+## Contributors
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=Roodbaraky)](https://github.com/Roodbaraky/PyBase)
+<a href="https://github.com/Roodbaraky/PyBase/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Roodbaraky/PyBase" />
+</a>
