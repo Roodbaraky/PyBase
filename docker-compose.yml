@@ -5,7 +5,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    container_name: pybase-backend
+    container_name: pybase_web_backend
     ports:
       - "8448:80"
     healthcheck:
@@ -17,7 +17,7 @@ services:
     restart: unless-stopped
   db:
     image: postgres
-    container_name: pybase-db
+    container_name: pybase_postgres
     restart: always
     ports:
       - "5432:5432"
@@ -28,7 +28,7 @@ services:
       - local_pgdata:/var/lib/postgresql/data
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin4_container
+    container_name: pybase_pgadmin4
     restart: always
     ports:
       - "8889:80"
