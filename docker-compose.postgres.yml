@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    container_name: local_pgdb
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: pybase
+      POSTGRES_PASSWORD: 6pqnhbtEqGAfA6Rj34tUCN43oCEcKKLaHXWZM70wzM40HDdJ7WmdKVTEN4mMIJNL1HiYeToA2WkaBF1cmRZcyQWuFtTNjpyRe7Se
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4_container
+    restart: always
+    ports:
+      - "8889:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@pybase.internal
+      PGADMIN_DEFAULT_PASSWORD: 6pqnhbtEqGAfA6Rj34tUCN43oCEcKKLaHXWZM70wzM40HDdJ7WmdKVTEN4mMIJNL1HiYeToA2WkaBF1cmRZcyQWuFtTNjpyRe7Se
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
