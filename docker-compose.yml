@@ -3,7 +3,7 @@ services:
   backend:
     image: pybaseimage
     build:
-      context: server
+      context: ./server
       dockerfile: Dockerfile
     container_name: pybase-backend
     ports:
