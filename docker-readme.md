@@ -30,3 +30,9 @@ Opting to use pub/sub type application to handle most of the message storage. Re
 
 * Pgadmin4 for database management, could omit this for the PROD environment, or instead, only allow local network access to the interface.
 * Very useful while developing, less useful in production.
+
+# Notes
+
+1. Koo to create secret allowing pushing containers to GHCR
+2. Add GH action to build image as part of CI on GH push
+3. Add image: ghcr.io/<NAMESPACE>/image_name:tag for the images in the docker-compose file rather than building them in the docker-compose
