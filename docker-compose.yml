@@ -31,7 +31,7 @@ services:
     container_name: pybase_pgadmin4
     restart: always
     ports:
-      - "8889:80"
+      - "8989:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@pybase.internal
       PGADMIN_DEFAULT_PASSWORD: 6pqnhbtEqGAfA6Rj34tUCN43oCEcKKLaHXWZM70wzM40HDdJ7WmdKVTEN4mMIJNL1HiYeToA2WkaBF1cmRZcyQWuFtTNjpyRe7Se
