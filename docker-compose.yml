@@ -20,7 +20,7 @@ services:
     container_name: pybase_postgres
     restart: always
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: pybase
       POSTGRES_PASSWORD: 6pqnhbtEqGAfA6Rj34tUCN43oCEcKKLaHXWZM70wzM40HDdJ7WmdKVTEN4mMIJNL1HiYeToA2WkaBF1cmRZcyQWuFtTNjpyRe7Se
