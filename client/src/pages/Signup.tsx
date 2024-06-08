@@ -6,7 +6,7 @@ export const Signup = () => {
   const handleSignIn = () => {
     navigate("/login");
   };
-  const handleSignUp = (e: FormEvent<HTMLFormElement>) => {
+  const handleSignUp = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const signupForm = document.getElementById(
       "form"
@@ -15,8 +15,13 @@ export const Signup = () => {
       const signupData = new FormData(signupForm);
       const username = signupData.get("username");
       const password = signupData.get("password");
-      for (const value of signupData.values()){
-        console.log(value)
+      const confirmPassword = signupData.get("confirm-password");
+      console.log(password, confirmPassword);
+      
+      if (password!== confirmPassword) {
+        alert("Passwords do not match");
+        //replace with nice conditionally rendered text
+        return;
       }
     }
   };
@@ -32,17 +37,38 @@ export const Signup = () => {
 
       <div className="mb-3">
         <label>First name</label>
-        <input type="text" className="form-control" placeholder="First name" />
+        <input
+          required
+          type="text"
+          className="form-control"
+          placeholder="First name"
+        />
       </div>
 
       <div className="mb-3">
         <label>Last name</label>
-        <input type="text" className="form-control" placeholder="Last name" />
+        <input
+          required
+          type="text"
+          className="form-control"
+          placeholder="Last name"
+        />
+      </div>
+      <div className="mb-3">
+        <label>Username</label>
+        <input
+          required
+          name="username"
+          type="text"
+          className="form-control"
+          placeholder="Username"
+        />
       </div>
 
       <div className="mb-3">
         <label>Email address</label>
         <input
+          required
           type="email"
           className="form-control"
           placeholder="Enter email"
@@ -52,6 +78,8 @@ export const Signup = () => {
       <div className="mb-3">
         <label>Password</label>
         <input
+          required
+          name="password"
           type="password"
           className="form-control"
           placeholder="Enter password"
@@ -60,7 +88,9 @@ export const Signup = () => {
       <div className="mb-3">
         <label>Confirm Password</label>
         <input
-          type="confirm-password"
+          required
+          name="confirm-password"
+          type="password"
           className="form-control"
           placeholder="Confirm password"
         />
@@ -72,7 +102,7 @@ export const Signup = () => {
         </button>
       </div>
       <p className="forgot-password text-right">
-        Already registered <a onClick={handleSignIn}>sign in?</a>
+        Already registered? <a onClick={handleSignIn}>Sign in</a>
       </p>
     </form>
   );

@@ -59,6 +59,7 @@ export const Login = () => {
       <div className="mb-3">
         <label>Username</label>
         <input
+        required
           name="username"
           type="text"
           className="form-control"
@@ -69,6 +70,7 @@ export const Login = () => {
       <div className="mb-3">
         <label>Password</label>
         <input
+        required
           name="password"
           type="password"
           className="form-control"
@@ -84,9 +86,9 @@ export const Login = () => {
           <input
             type="checkbox"
             className="custom-control-input"
-            id="customCheck1"
+            id="remember-me"
           />
-          <label className="custom-control-label" htmlFor="customCheck1">
+          <label className="custom-control-label" htmlFor="remember-me">
             Remember me
           </label>
           {/* ^ this doesn't do anything at the moment / is enabled by default */}
