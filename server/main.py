@@ -50,6 +50,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
 
 @app.post("/users/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
@@ -85,15 +89,7 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     items = crud.get_items(db, skip=skip, limit=limit)
     return items
 
-# fake_users_db = {
-#     "johndoe": {
-#         "username": "johndoe",
-#         "full_name": "John Doe",
-#         "email": "johndoe@example.com",
-#         "hashed_password": "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW",
-#         "disabled": False,
-#     }
-# }
+
 
 # class Token(BaseModel):
 #     access_token: str
@@ -217,20 +213,20 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 #     return [{"item_id": "Foo", "owner": current_user.username}]
 
 
-# @app.get("/")
-# def read_root():
-#     return {"Hello": "World"}
+
 
 # @app.get("/items")
 # async def read_items(token: Annotated[str, Depends(oauth2_scheme)]):
 #     return {"token": token}
 
 
-# @app.post("/files/")
-# async def create_file(file: Annotated[bytes, File()]):
-#     return {"file_size": len(file)}
 
 
+
+
+
+
+# Erroneous code, no longer required (temp)
 # @app.post("/uploadfile/")
 # async def create_upload_file(file: UploadFile):
 #     file_location = f"./{file.filename}"
@@ -241,3 +237,16 @@ def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
         
 #     return FileResponse(file_location, media_type='application/octet-stream',filename=file_location)
 
+# @app.post("/files/")
+# async def create_file(file: Annotated[bytes, File()]):
+#     return {"file_size": len(file)}
+
+# fake_users_db = {
+#     "johndoe": {
+#         "username": "johndoe",
+#         "full_name": "John Doe",
+#         "email": "johndoe@example.com",
+#         "hashed_password": "$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW",
+#         "disabled": False,
+#     }
+# }
