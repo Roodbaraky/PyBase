@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/context";
 import axios from "axios";
+import ChatsList from "../components/ChatsList";
 interface Token {
   access_token: string;
   token_type: string;
@@ -50,6 +51,7 @@ function Home() {
       <button className="btn self-center" onClick={handleLogout}>
         Log out
       </button>
+      <ChatsList/>
     </main>
   );
 }
