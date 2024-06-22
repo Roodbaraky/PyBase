@@ -6,7 +6,7 @@ export default function ChatIcon({ chat }) {
   const { chatName = 'Example Chat', chatImgURL = imgPlaceholderURL } = chat;
 
   const initials = chatName.split(' ')
-    .map(word => word[0].toUpperCase())
+    .map((word: string[]) => word[0].toUpperCase())
     .join('');
 
   const backgroundImageURL = chatImgURL;
