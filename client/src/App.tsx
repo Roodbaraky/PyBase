@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Login } from "./pages/Login";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Signup } from "./pages/Signup";
-import Home from "./pages/Home";
+import { useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { AuthContext } from "./context/context";
+import Home from "./pages/Home";
+import { Login } from "./pages/Login";
+import { Signup } from "./pages/Signup";
 
-function App() {
+
+ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  
 
   return (
     <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn, user, setUser }}>
