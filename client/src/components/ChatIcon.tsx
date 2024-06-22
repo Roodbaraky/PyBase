@@ -15,6 +15,10 @@ export default function ChatIcon({ chat }) {
   const backgroundImageURL = chatImgURL;
 const handleClick = () =>{
 navigate(`/chat/${chatIndex}`)
+//this might not be the best idea, but it seems to be how facebook messenger does it..
+// note: https://www.messenger.com/t/4444411682262001/ - /t/ for groupchats
+//  ...  https://www.messenger.com/e2ee/t/7393635534021368 - /e2ee/t/ for single chats...
+//e2ee == end to end e?
 }
   return (
     <article

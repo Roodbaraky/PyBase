@@ -1,12 +1,22 @@
-import { useParams } from 'react-router-dom'
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function Chat() {
-    const params = useParams()
-    console.log(params)
+  const params = useParams();
+  const navigate = useNavigate();
+  const token = localStorage.getItem("auth");
+  useEffect(()=>{
+
+      if (!token) {
+        navigate("/login");
+      }
+  })
+
+
   return (
-   <>
-        <div>Chat</div>
-        <div>{params.chatId}</div>
-   </>
-  )
+    <>
+      <div>Chat</div>
+      <div>{params.chatId}</div>
+    </>
+  );
 }
