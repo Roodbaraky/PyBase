@@ -4,6 +4,7 @@ import { AuthContext } from "./context/context";
 import Home from "./pages/Home";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
+import Chat from "./pages/Chat";
 
 
  function App() {
@@ -16,9 +17,10 @@ import { Signup } from "./pages/Signup";
       <Router>
         <main id="app-container">
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<Home />}/>
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/chat/:chatId" element={<Chat/>}/>
           </Routes>
         </main>
       </Router>
