@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/context";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import ChatsList from "../components/ChatsList";
 interface Token {
   access_token: string;
@@ -22,8 +22,19 @@ function Home() {
           },
         });
         setUser(response.data);
-      } catch (err) {
-        console.log(err);
+      } catch (err:unknown) {
+        if(err instanceof Error){
+          const axiosError = err as AxiosError
+          const errorStatus = axiosError.response?.status
+          if(errorStatus === 401){
+            //Replace with an error component
+            alert("There was a problem with your credentials or your session expired, please sign in again")
+            localStorage.clear()
+            navigate('/login')
+            //Better still, implement a function which compares time now to token delta and token created_at which produces this prompt 
+          }
+
+        }
       }
     }
     // console.log("infinite loop check");
